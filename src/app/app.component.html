@@ -1,0 +1,11 @@
+<div *ngIf="checkVar; else elseBlock">
+  <div *ngIf="adminVar; else elseBlock">
+    <app-admin-home-page></app-admin-home-page>
+  </div>
+  <ng-template #elseBlock>
+    <app-home-page></app-home-page>
+  </ng-template>
+</div>
+<ng-template #elseBlock>
+  <router-outlet></router-outlet>
+</ng-template>

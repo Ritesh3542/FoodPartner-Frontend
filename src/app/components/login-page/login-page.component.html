@@ -1,0 +1,27 @@
+
+<div *ngIf="checkVar; else elseBlock">
+    <div class="background-wrap">
+      <div class="background"></div>
+    </div>
+    <form id="accesspanel" action="">
+      <h1 id="litheader">FoodPartner</h1>
+      <p style="text-align: center;">{{message}}</p>
+      <div class="inset">
+        <p>
+          <input type="text" name="username" [(ngModel)]="username" id="email" placeholder="username">
+        </p>
+        <p>
+          <input type="password" name="password" [(ngModel)]="password" id="password" placeholder="password">
+        </p>
+      </div>
+      <p class="p-container">
+        <input type="submit" name="Login" id="go" value="Admin Login" (click)="doAdminLogin()">
+      </p>
+      <p class="p-container">
+        <input type="submit" name="Login" id="go" value="Login" (click)="doLogin()">
+      </p>
+    </form>
+  </div>
+  <ng-template #elseBlock>
+    <h1 style="text-align: center;">PLEASE SCAN QR AND LOGIN</h1>
+  </ng-template>
