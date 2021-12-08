@@ -10,19 +10,29 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { AdminHomePageComponent } from './components/admin-home-page/admin-home-page.component';
 import { MenuComponent } from './components/menu/menu.component';
 
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogCardComponent } from './components/menu/dialog-card/dialog-card.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     LoginPageComponent,
     AdminHomePageComponent,
-    MenuComponent
+    MenuComponent,
+    DialogCardComponent
   ],
+  entryComponents:[DialogCardComponent],
   imports: [
+    MatDialogModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,11 +1,10 @@
 <div *ngIf="checkVar; else elseBlock">
-  <div class="container" data-aos="fade-up">
 
+  <div class="container" data-aos="fade-up">
     <div class="section-title">
       <h2>Menu</h2>
-      <p>Check Our Menu</p>
+      <p>Check Our Tasty Menu</p>
     </div>
-
     <div class="row" data-aos="fade-up" data-aos-delay="100">
       <div class="col-lg-12 d-flex justify-content-center">
         <ul id="menu-flters">
@@ -17,15 +16,22 @@
       </div>
     </div>
 
-    <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+    <div *ngFor="let d of AllDishes" class="row menu-container" data-aos="fade-up" data-aos-delay="200">
 
-      <div class="col-lg-6 menu-item filter-starters">
-        <img src="../assets/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
+      <div class="col-lg-6 menu-item filter-{{d.type}}">
+        <img src="{{d.dphoto}}" class="menu-img" alt="">
+        <div class="menu-ingredients">
+          <i style="color: green;" class="fas fa-leaf"></i>
+        </div>
         <div class="menu-content">
-          <a href="#">Lobster Bisque</a><span>Rs 5.95</span>
+          <a mat-raised-button (click)="openDialog(d)">{{d.dname}}</a><span>Rs {{d.dprice}}</span>
         </div>
         <div class="menu-ingredients">
-          Lorem, deren, trataro, filede, nerada
+          {{d.ddesc}}
+        </div>
+        <div class="menu-ingredients">
+          <i style="color:goldenrod;" class="fa fa-star" aria-hidden="true">{{d.drating}}</i>
+          <br>
         </div>
       </div>
 

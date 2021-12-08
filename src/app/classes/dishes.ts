@@ -9,4 +9,5 @@ export class Dishes {
 	dimages!:String;
 	dstatustoday!:number;
 	type!:String
+	ddesc!:String;
 }

@@ -1,0 +1,16 @@
+<h1 ><span><i style="color: green;" class="fas fa-leaf"></i></span></h1>
+<mat-carousel timings="250ms ease-in" [autoplay]="true" [interval]="5000" color="accent" maxWidth="auto" [maintainAspectRatio]="true" [proportion]="70"
+    [loop]="true" [hideArrows]="false" [useKeyboard]="true" [useMouseWheel]="false"
+    orientation="ltr" style="text-decoration: none;">
+    <mat-carousel-slide class="myImg"  *ngFor="let slide of slides; let i = index" [image]="slide.image"
+        overlayColor="#00000040" [hideOverlay]="true">
+    </mat-carousel-slide>
+</mat-carousel>
+<mat-dialog-content>
+    <h3>
+    <br>
+    <a style="color: tomato;">{{data.dname}}<span>   Rs {{data.dprice}}</span></a>
+</h3>
+<p>{{ data.ddesc }}</p>
+<button>ADD</button>
+</mat-dialog-content>
